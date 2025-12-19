@@ -40,7 +40,7 @@ function randomEmail() {
                 const email = response.data;
 
                 //aggiungo l'email come <li> alla lista 
-                emailList.innerHTML += `<li>${email.response}</li>`;
+                emailList.innerHTML += `<li class="list-group-item">${email.response}</li>`;
             })
             .catch(error => {
                 //codice da eseguire in caso di errore
