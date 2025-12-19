@@ -13,13 +13,15 @@ Inserire un bottone che al click faccia il fetch altre 10 mail (sostituendo le a
 const myOutput = document.getElementById("test"); 
 const endpoint  = "https://flynn.boolean.careers/exercises/api/random/mail";
 
+for (let i = 0; i < 10; ++i ){
 axios.get(endpoint)
 .then(response => {
 
     //codice da eseguire in caso di successo 
-    const result = response.data ; 
-    console.log(result);
-    myOutput.innerText= result.response ; 
+    const email = response.data ; 
+   
+    //aggiungo un <li> alla lista 
+    myOutput.innerHTML += `<li>${email.response}</li>` ; 
 })
 .catch(error => {
     //codice da eseguire in caso di errore
@@ -28,4 +30,5 @@ axios.get(endpoint)
 .finally(()=> {
     //codice da eseguire sempre 
     console.log("ok"); 
-})
+});
+}
