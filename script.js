@@ -19,6 +19,7 @@ axios.get(endpoint)
     //codice da eseguire in caso di successo 
     const result = response.data ; 
     console.log(result);
+    myOutput.innerText= result.response ; 
 })
 .catch(error => {
     //codice da eseguire in caso di errore
